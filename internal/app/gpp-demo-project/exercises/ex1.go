@@ -2,6 +2,8 @@ package exercises
 
 import "fmt"
 
+// Hello World
+
 type ExerciseOne struct {
 }
 
