@@ -2,19 +2,12 @@ package exercises
 
 import "fmt"
 
-<<<<<<< HEAD
 // Interfaces
 
 type ExerciseFive struct {
 }
 
-=======
-type ExerciseFive struct {
-}
-
 // Interfaces
-
->>>>>>> e0e15892c921234ae4d367d99596e22491b28de5
 type I interface {
 	Test()
 }
