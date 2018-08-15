@@ -1,6 +1,6 @@
 package demo
 
-import "github.com/Eunanibus/gpp-demo-project/internal/app/gpp-demo-project/exercises"
+import "github.com/eunanibus/gpp-demo-project/internal/app/gpp-demo-project/exercises"
 
 func RunDemo() {
 	runExercise(exercises.ExerciseOne{})

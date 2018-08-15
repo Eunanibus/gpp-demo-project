@@ -11,21 +11,33 @@ type ExampleObject struct {
 // Pointers and references
 func (ex ExerciseNine) Run() {
 
-	exOb := ExampleObject{
+	exOb1 := ExampleObject{
 		name: "Test object",
 	}
 
-	// When passing an object to a function, the parameter you pass is actually a new object with a new reference in memory
-	// In order to use the same object, you need to pass a pointer to the object
+	exOb2 := ExampleObject{
+		name: "Test object",
+	}
 
-	// This will work because it is a pointer to the object
-	objectPrinter(&exOb)
+	mutateObjectPointer(&exOb1)
+	fmt.Printf("exOb1 name - %s ", exOb1.name)
 
-	// This will not work because it is a direct reference to the object
-	//objectPrinter(exOb)
+	mutateObject(exOb2)
+	fmt.Printf("exOb2 name - %s ", exOb2.name)
+
+	exOb2 = mutateObjectWithReturn(exOb2)
+	fmt.Printf("exOb2 name - %s ", exOb2.name)
 }
 
-// Expected Pointers can be declared in signatures with the * notation
-func objectPrinter(object *ExampleObject) {
-	fmt.Println(object.name)
+func mutateObjectPointer(object *ExampleObject) {
+	object.name = "Cats are cool"
+}
+
+func mutateObject(object ExampleObject) {
+	object.name = "Cats are cool"
+}
+
+func mutateObjectWithReturn(object ExampleObject) ExampleObject {
+	object.name = "Cats are cool"
+	return object
 }
